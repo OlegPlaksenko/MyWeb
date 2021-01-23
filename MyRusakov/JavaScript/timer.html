@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заголовок HTML</title>
+    <script language="javascript">
+        function dynamic(str) {
+            var x = 0;
+            var id = setInterval(dynam, 100);
+            function dynam() {
+                document.getElementById("din").innerHTML += str.charAt(x);
+                x++;
+                if (x == string.length) clearInterval(id);
+            }
+        }
+        function vk() {
+            var start = Number(document.getElementById("number").innerHTML);
+            var end = new Number(start + Math.random()*50);
+            document.getElementById("number").innerHTML = Math.floor(end);
+            setTimeout(vk, Math.random()*2000);
+        }
+    </script>
+</head>
+<body>
+    <p>Нас уже: <b id = "number">39210</b></p>
+    <br>
+    <span id="din"></span>
+    <script>
+        vk();
+        dynamic("Это динамический текст. Спасибо за просмотр!");
+    </script>
+</body>
+</html>
